@@ -1,16 +1,71 @@
-# payplan
+# **PayPlan**
+  
+### Report: 1
+#### DeadLine : 23rd September 2022
 
-A new Flutter project.
+<br>
 
-## Getting Started
+#### **USER INTERFACE :**
+*  **DeadLine : 18th Sept 12pm**
 
-This project is a starting point for a Flutter application.
+* #### **Tasks :**
+    >[&cross;] Login / SignUp Screen  
+    >
+    >[&cross;] Home Screen
 
-A few resources to get you started if this is your first Flutter project:
+<!--
+    [ ] Setting Screen -> About Screen
+    [ ] Logo Design
+    [ ] Splash Screen
+    [ ] Full Size Chart View Screen
+    [ ] Money Logs Screen
+-->
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+#### **DEVELOPMENT :**
+* **DeadLine : 21th Sept 12pm**
+
+* #### **Tasks :** 
+    >[&cross;] Document the Specifications --> Rough  
+    >
+<!--  
+  >[&cross;] Login / SignUp Auth Setup  
+-->
+    >
+    >[&cross;] SMS read & write on excel
+    >
+    >[&cross;] Data Read and embed in a graph (Curr show retrival of hard data)  
+
+<!--
+    [ ] Near to professional SRS docs
+    [ ] Push Notifications (local & cloud)
+    [ ] Other UI components  
+-->
+
+#### **MACHINE LEARNING :**
+* **DeadLine : 21th Sept 12pm**
+
+* #### **Tasks :** 
+    >To be done
+<!--
+    >[&cross;] Gather Data  
+    >
+    >[&cross;] Model Creation 
+-->
+<!--
+    [ ] Model testing
+    [ ] Writing Back data to firebase
+>
+
+
+
+
+
+
+
+
+* Team Members :
+>* Ram Bagga
+>* Sarvagya Saxena
+>* Anusha Raghav
+
