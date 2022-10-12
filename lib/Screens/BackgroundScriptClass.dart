@@ -25,11 +25,11 @@ class _BackgroundScriptClassState extends State<BackgroundScriptClass> {
   Future<List<List<String?>>> getAllMessages() async {
     messages = await telephony.getInboxSms(
       columns: [SmsColumn.ADDRESS, SmsColumn.BODY, SmsColumn.DATE],
-      //filter: SmsFilter.where(SmsColumn.ADDRESS).equals("AX-SBIUPI"),
+      // filter: SmsFilter.where(SmsColumn.ADDRESS).equals("AX-SBIUPI"),
       // sortOrder: [
       //   OrderBy(SmsColumn.ADDRESS, sort: Sort.ASC),
       //   OrderBy(SmsColumn.BODY)
-      // ]
+      //],
     );
 
     List<String?> address = messages.map((e) => e.address).toList();
