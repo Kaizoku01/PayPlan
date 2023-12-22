@@ -1,0 +1,79 @@
+import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:pay_plan/screens/logs_screen/logs_screen.dart';
+import 'package:pay_plan/screens/profile_screen/profile_screen.dart';
+import 'package:sliding_clipped_nav_bar/sliding_clipped_nav_bar.dart';
+
+import '../home_screen/home_screen.dart';
+
+///TODO: IMPLEMENT PROVIDER ON THE INDEX OF BOTTOM_NAV_BAR
+
+class BottomNavBarWrapper extends StatefulWidget {
+  const BottomNavBarWrapper({super.key});
+  @override
+  State<BottomNavBarWrapper> createState() => _BottomNavBarWrapperState();
+}
+
+class _BottomNavBarWrapperState extends State<BottomNavBarWrapper> {
+  ///[_pageController] controller for bottomNavBar
+  late PageController _pageController;
+
+  ///[selectedIndex] bottomNavBar index
+  int selectedIndex = 0;
+
+  ///[_screenOptions] Contains all screens callouts for bottomNavBar
+  final List<Widget> _screenOptions = const [
+    HomeScreen(),
+    LogScreen(),
+    ProfileScreen(),
+  ];
+
+  @override
+  void initState() {
+    super.initState();
+    _pageController = PageController(initialPage: selectedIndex);
+  }
+
+  void _onButtonPressed(int index) {
+    setState(() {
+      selectedIndex = index;
+    });
+    _pageController.animateToPage(selectedIndex,
+        duration: const Duration(milliseconds: 400), curve: Curves.easeOutQuad);
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: PageView(
+        physics: const NeverScrollableScrollPhysics(),
+        controller: _pageController,
+        children: _screenOptions,
+      ),
+      bottomNavigationBar: SlidingClippedNavBar(
+        backgroundColor: Colors.white,
+        onButtonPressed: _onButtonPressed,
+        iconSize: 30,
+        activeColor: const Color(0xFF01579B),
+        selectedIndex: selectedIndex,
+        barItems: <BarItem>[
+          BarItem(
+            icon: FontAwesomeIcons.chartSimple,
+            title: 'Home',
+          ),
+          BarItem(
+            icon: FontAwesomeIcons.sackDollar,
+            title: 'Logs',
+          ),
+          BarItem(
+            icon: FontAwesomeIcons.user,
+            title: 'Profile',
+          ),
+        ],
+      ),
+    );
+  }
+}
+
+
+
