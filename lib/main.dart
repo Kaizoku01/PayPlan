@@ -1,9 +1,19 @@
 import 'package:flutter/material.dart';
+import 'package:pay_plan/common/provider/theme_provider.dart';
+import 'package:pay_plan/common/theme/dark_theme/dark_theme.dart';
+import 'package:pay_plan/common/theme/light_theme/light_theme.dart';
 import 'package:pay_plan/screens/bottom_nav_bar_wrapper/bottom_nav_bar_wrapper.dart';
-
+import 'package:provider/provider.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(
+    MultiProvider(
+      providers: [
+        ChangeNotifierProvider(create: (_) => ThemeProvider()),
+      ],
+      child: const MyApp(),
+    ),
+  );
 }
 
 class MyApp extends StatelessWidget {
@@ -12,14 +22,14 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Pay_Plan',
-      theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-        useMaterial3: true,
-      ),
+      theme: context.watch<ThemeProvider>().isDarkModeEnabled
+          ? darkTheme(context)
+          : lightTheme(context),
+      darkTheme: darkTheme(context),
+      themeMode: context.watch<ThemeProvider>().isDarkModeEnabled
+          ? ThemeMode.dark
+          : ThemeMode.light,
       home: const BottomNavBarWrapper(),
     );
   }
 }
-
-

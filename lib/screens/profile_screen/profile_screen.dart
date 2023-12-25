@@ -195,7 +195,7 @@ class ProfileScreen extends StatelessWidget {
                 top: 5,
                 left: 35,
                 child: SvgPicture.asset(
-                  'assets/profile_screen_clip_art.svg',
+                  'assets/images/profile_screen_clip_art.svg',
                   height: 110,
                   width: 100,
                 ),
