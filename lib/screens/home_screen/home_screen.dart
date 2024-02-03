@@ -12,28 +12,19 @@ class HomeScreen extends StatefulWidget {
 class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
-    return const SafeArea(
+    return SafeArea(
       child: Padding(
-        padding: EdgeInsets.symmetric(horizontal: 5.0),
+        padding: const EdgeInsets.symmetric(horizontal: 5.0),
         child: Column(
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-          // crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
-            // const Text(
-            //   'Lets Plan!',
-            //   style: TextStyle(
-            //     fontWeight: FontWeight.bold,
-            //     fontSize: 28,
-            //     color: Color(0xff505280),
-            //   ),
-            // ),
-            GraphClass(),
-            WealthInformationCard(),
+            const GraphClass(),
+            SizedBox(
+              height: MediaQuery.sizeOf(context).height / 12,
+            ),
+            const WealthInformationCard(),
           ],
         ),
       ),
     );
   }
 }
-
-

@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:pay_plan/common/theme/app_color_scheme.dart';
 import 'package:pay_plan/screens/logs_screen/logs_screen.dart';
 import 'package:pay_plan/screens/profile_screen/profile_screen.dart';
 import 'package:sliding_clipped_nav_bar/sliding_clipped_nav_bar.dart';
 
+import '../../common/theme/app_text_theme.dart';
 import '../home_screen/home_screen.dart';
 
 ///TODO: IMPLEMENT PROVIDER ON THE INDEX OF BOTTOM_NAV_BAR
@@ -45,6 +47,25 @@ class _BottomNavBarWrapperState extends State<BottomNavBarWrapper> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        title: Row(
+          children: [
+            Container(
+              height: 30,
+              width: 30,
+              decoration: const BoxDecoration(
+                  shape: BoxShape.circle, color: Colors.blue),
+            ),
+            const SizedBox(width: 10),
+            Text(
+              "Pay-Plan",
+              style: PayPlanTextTheme.appTextTheme(
+                      PayPlanColorScheme.font1Theme(context), context)
+                  .headlineLarge,
+            ),
+          ],
+        ),
+      ),
       body: PageView(
         physics: const NeverScrollableScrollPhysics(),
         controller: _pageController,
@@ -74,6 +95,3 @@ class _BottomNavBarWrapperState extends State<BottomNavBarWrapper> {
     );
   }
 }
-
-
-

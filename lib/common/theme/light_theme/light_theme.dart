@@ -8,6 +8,7 @@ ThemeData lightTheme(BuildContext context) {
     useMaterial3: true,
     brightness: Brightness.light,
     fontFamily: "Nato Sans",
+    appBarTheme: AppBarTheme(color: PayPlanColorScheme.lightBackground1, elevation: 0),
     textTheme: PayPlanTextTheme.appTextTheme(PayPlanColorScheme.font1Theme(context), context),
   );
 }
