@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:pay_plan/common/theme/app_color_scheme.dart';
+import 'package:pay_plan/common/theme/app_text_theme.dart';
 import 'package:syncfusion_flutter_charts/charts.dart';
 
 class GraphClass extends StatelessWidget {
@@ -7,18 +9,29 @@ class GraphClass extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SfCartesianChart(
-      backgroundColor: Colors.white,
+      backgroundColor: PayPlanColorScheme.bg1Theme(context),
       plotAreaBorderWidth: 0,
-      primaryXAxis: const CategoryAxis(
-        axisLine: AxisLine(color: Colors.black, width: 0),
-        majorGridLines: MajorGridLines(width: 0),
+      //x-axis
+      primaryXAxis: CategoryAxis(
+        majorTickLines: const MajorTickLines(width: 0),
+        axisLine: const AxisLine(color: Colors.black, width: 0),
+        majorGridLines: const MajorGridLines(width: 0),
+        labelStyle: PayPlanTextTheme.appTextTheme(
+                PayPlanColorScheme.font1Theme(context), context)
+            .bodySmall,
       ),
-      primaryYAxis: const NumericAxis(
-        axisLine: AxisLine(color: Colors.black, width: 0),
-        majorGridLines: MajorGridLines(width: 1),
+      //y-axis
+      primaryYAxis: NumericAxis(
+        isVisible: false,
+        axisLine: const AxisLine(color: Colors.black, width: 0),
+        majorGridLines: const MajorGridLines(width: 0),
         maximum: 100,
         minimum: 0,
+        labelStyle: PayPlanTextTheme.appTextTheme(
+                PayPlanColorScheme.font1Theme(context), context)
+            .bodySmall,
       ),
+      //data
       series: [
         ColumnSeries<ChartData, String>(
           dataSource: data,
@@ -27,6 +40,11 @@ class GraphClass extends StatelessWidget {
           color: Colors.deepOrange,
           borderRadius: BorderRadius.circular(10),
           pointColorMapper: (ChartData data, _) => data.color,
+          dataLabelSettings: DataLabelSettings(
+              isVisible: true,
+              textStyle: PayPlanTextTheme.appTextTheme(
+                      PayPlanColorScheme.font1Theme(context), context)
+                  .bodySmall),
         )
       ],
     );
@@ -34,13 +52,13 @@ class GraphClass extends StatelessWidget {
 }
 
 List<ChartData> data = [
-  ChartData('Sun', 26, Color(0xffC7F4A5)),
-  ChartData('Mon', 35, Color(0xffFBB1C3)),
-  ChartData('Tues', 28, Color(0xffB6BBFE)),
-  ChartData('Wed', 34, Color(0xffC7F4A5)),
-  ChartData('Thurs', 32, Color(0xffFBB1C3)),
-  ChartData('Fri', 14, Color(0xffB6BBFE)),
-  ChartData('Sat', 50, Color(0xffC7F4A5)),
+  ChartData('Sun', 26, const Color(0xffC7F4A5)),
+  ChartData('Mon', 35, const Color(0xffFBB1C3)),
+  ChartData('Tues', 28, const Color(0xffB6BBFE)),
+  ChartData('Wed', 34, const Color(0xffC7F4A5)),
+  ChartData('Thurs', 32, const Color(0xffFBB1C3)),
+  ChartData('Fri', 14, const Color(0xffB6BBFE)),
+  ChartData('Sat', 50, const Color(0xffC7F4A5)),
 ];
 
 class ChartData {

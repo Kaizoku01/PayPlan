@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:pay_plan/common/theme/app_color_scheme.dart';
 import 'package:syncfusion_flutter_gauges/gauges.dart';
 
 class GuageClass extends StatelessWidget {
@@ -21,7 +22,7 @@ class GuageClass extends StatelessWidget {
             GaugeRange(
               startValue: 0,
               endValue: 0.65,
-              color: const Color(0xffC7F4A5),
+              color: PayPlanColorScheme.chartBarsTheme1(context),
               startWidth: 12,
               endWidth: 12,
             ),
@@ -36,7 +37,7 @@ class GuageClass extends StatelessWidget {
             GaugeRange(
               startValue: 0.68,
               endValue: 0.97,
-              color: const Color(0xffFBB1C3),
+              color: PayPlanColorScheme.chartBarsTheme2(context),
               startWidth: 11,
               endWidth: 11,
             ),
