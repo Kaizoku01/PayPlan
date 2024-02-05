@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
 
+import '../../../common/theme/app_color_scheme.dart';
+
 class ProfileButton extends StatelessWidget {
   final double width;
   final double height;
   final double borderWidth;
-  final Color borderColor;
+  final Color? borderColor;
   final double borderRadiusValue;
   final Icon icon;
   final Text? buttonText;
@@ -14,7 +16,7 @@ class ProfileButton extends StatelessWidget {
     this.width = 200,
     this.height = 60,
     this.borderWidth = 2,
-    this.borderColor = Colors.black,
+    this.borderColor,
     this.borderRadiusValue = 16,
     required this.icon,
     required this.onTap,
@@ -29,7 +31,7 @@ class ProfileButton extends StatelessWidget {
         height: height,
         width: width,
         decoration: BoxDecoration(
-          border: Border.all(color: borderColor, width: borderWidth),
+          border: Border.all(color: borderColor ?? PayPlanColorScheme.font1Theme(context), width: borderWidth),
           borderRadius: BorderRadius.circular(borderRadiusValue),
         ),
         child: Center(

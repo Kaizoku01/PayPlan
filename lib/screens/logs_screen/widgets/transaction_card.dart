@@ -3,8 +3,9 @@ import 'package:flutter/material.dart';
 import '../../../common/theme/app_color_scheme.dart';
 import '../../../common/theme/app_text_theme.dart';
 class TransactionCard extends StatelessWidget {
+  final bool isIncome;
   const TransactionCard({
-    super.key,
+    super.key, required this.isIncome,
   });
 
   @override
@@ -13,7 +14,7 @@ class TransactionCard extends StatelessWidget {
       height: 100,
       decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(12),
-          color: Colors.pinkAccent),
+          color: isIncome ? PayPlanColorScheme.chartBarsTheme1(context) : PayPlanColorScheme.chartBarsTheme2(context)),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
@@ -42,9 +43,10 @@ class TransactionCard extends StatelessWidget {
             padding: const EdgeInsets.only(top: 15, bottom: 5, right: 10),
             child: Column(
               children: [
-                const Icon(
-                  Icons.add_rounded,
+                Icon(
+                  isIncome ? Icons.add_rounded : Icons.remove_rounded,
                   size: 38,
+                  color: PayPlanColorScheme.darkBackground1,
                 ),
                 const Spacer(),
                 Text(

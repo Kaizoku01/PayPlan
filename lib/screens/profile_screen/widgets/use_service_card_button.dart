@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:pay_plan/common/theme/app_color_scheme.dart';
 
 class UseServiceCardButton extends StatelessWidget {
   const UseServiceCardButton({
@@ -14,7 +15,7 @@ class UseServiceCardButton extends StatelessWidget {
       width: 320,
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(20),
-        color: const Color(0xffCFF4B3),
+        color: PayPlanColorScheme.chartBarsTheme1(context),
       ),
       child: Stack(
         children: [
@@ -49,8 +50,10 @@ class UseServiceCardButton extends StatelessWidget {
                         Radius.elliptical(45, 20),
                       ),
                     ),
-                    child: const Icon(FontAwesomeIcons.arrowRight,
-                        color: Color(0xff505280)),
+                    child:  Icon(
+                      FontAwesomeIcons.arrowRight,
+                      color: PayPlanColorScheme.icon2Theme(context),
+                    ),
                   ),
                   onTap: () {
                     //Todo : HOW TO USE SERVICE SCREEN ROUTE

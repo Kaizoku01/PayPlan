@@ -24,10 +24,10 @@ class _BottomNavBarWrapperState extends State<BottomNavBarWrapper> {
   int selectedIndex = 0;
 
   ///[_screenOptions] Contains all screens callouts for bottomNavBar
-  final List<Widget> _screenOptions = const [
-    HomeScreen(),
+  final List<Widget> _screenOptions =  [
+    const HomeScreen(),
     LogScreen(),
-    ProfileScreen(),
+    const ProfileScreen(),
   ];
 
   @override
@@ -71,26 +71,29 @@ class _BottomNavBarWrapperState extends State<BottomNavBarWrapper> {
         controller: _pageController,
         children: _screenOptions,
       ),
-      bottomNavigationBar: SlidingClippedNavBar(
-        backgroundColor: Colors.white,
-        onButtonPressed: _onButtonPressed,
-        iconSize: 30,
-        activeColor: const Color(0xFF01579B),
-        selectedIndex: selectedIndex,
-        barItems: <BarItem>[
-          BarItem(
-            icon: FontAwesomeIcons.chartSimple,
-            title: 'Home',
-          ),
-          BarItem(
-            icon: FontAwesomeIcons.sackDollar,
-            title: 'Logs',
-          ),
-          BarItem(
-            icon: FontAwesomeIcons.user,
-            title: 'Profile',
-          ),
-        ],
+      bottomNavigationBar: SizedBox(
+        height: 70,
+        child: SlidingClippedNavBar(
+          backgroundColor: PayPlanColorScheme.bg1Theme(context),
+          onButtonPressed: _onButtonPressed,
+          iconSize: 30,
+          activeColor: PayPlanColorScheme.font1Theme(context),
+          selectedIndex: selectedIndex,
+          barItems: <BarItem>[
+            BarItem(
+              icon: FontAwesomeIcons.chartSimple,
+              title: 'Home',
+            ),
+            BarItem(
+              icon: FontAwesomeIcons.sackDollar,
+              title: 'Logs',
+            ),
+            BarItem(
+              icon: FontAwesomeIcons.user,
+              title: 'Profile',
+            ),
+          ],
+        ),
       ),
     );
   }

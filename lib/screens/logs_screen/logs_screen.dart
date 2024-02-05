@@ -5,8 +5,8 @@ import '../../common/theme/app_color_scheme.dart';
 import '../../common/theme/app_text_theme.dart';
 
 class LogScreen extends StatelessWidget {
-  const LogScreen({super.key});
-
+  LogScreen({super.key});
+ final  List<bool> testStatusList = [false, true, true];
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -28,7 +28,7 @@ class LogScreen extends StatelessWidget {
             child: ListView.separated(
               itemCount: 3,
               itemBuilder: (context, index) {
-                return const TransactionCard();
+                return TransactionCard(isIncome: testStatusList[index],);
               },
               separatorBuilder: (BuildContext context, int index) {
                 return const SizedBox(height: 10);

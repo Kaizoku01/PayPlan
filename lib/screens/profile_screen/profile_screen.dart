@@ -31,17 +31,17 @@ class ProfileScreen extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
             ProfileButton(
-              icon: const Icon(
+              icon: Icon(
                 FontAwesomeIcons.penToSquare,
-                color: Color(0xff505280),
+                color: PayPlanColorScheme.icon1Theme(context),
                 size: 20,
               ),
-              buttonText: const Text(
+              buttonText: Text(
                 "Personalize",
                 style: TextStyle(
                   fontWeight: FontWeight.bold,
                   fontSize: 18,
-                  color: Color(0xff505280),
+                  color: PayPlanColorScheme.icon1Theme(context),
                 ),
               ),
               onTap: () {
@@ -50,9 +50,9 @@ class ProfileScreen extends StatelessWidget {
             ),
             ProfileButton(
               width: 80,
-              icon: const Icon(
+              icon: Icon(
                 FontAwesomeIcons.wallet,
-                color: Color(0xff505280),
+                color: PayPlanColorScheme.icon1Theme(context),
                 size: 20,
               ),
               onTap: () {
@@ -67,17 +67,17 @@ class ProfileScreen extends StatelessWidget {
           children: [
             ProfileButton(
               width: 140,
-              icon: const Icon(
+              icon: Icon(
                 FontAwesomeIcons.rightFromBracket,
                 size: 20,
-                color: Color(0xff505280),
+                color: PayPlanColorScheme.icon1Theme(context),
               ),
-              buttonText: const Text(
+              buttonText: Text(
                 'Sign Out',
                 style: TextStyle(
                   fontWeight: FontWeight.bold,
                   fontSize: 18,
-                  color: Color(0xff505280),
+                  color: PayPlanColorScheme.icon1Theme(context),
                 ),
               ),
               onTap: () {
@@ -86,17 +86,17 @@ class ProfileScreen extends StatelessWidget {
             ),
             ProfileButton(
               width: 140,
-              icon: const Icon(
+              icon: Icon(
                 FontAwesomeIcons.ghost,
                 size: 20,
-                color: Color(0xff505280),
+                color: PayPlanColorScheme.icon1Theme(context),
               ),
-              buttonText: const Text(
+              buttonText: Text(
                 'About Us',
                 style: TextStyle(
                   fontWeight: FontWeight.bold,
                   fontSize: 18,
-                  color: Color(0xff505280),
+                  color: PayPlanColorScheme.icon1Theme(context),
                 ),
               ),
               onTap: () {

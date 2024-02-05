@@ -49,13 +49,13 @@ class GraphClass extends StatelessWidget {
 }
 
 List<ChartData> data = [
-  ChartData('Sun', 26, Color(0xffC7F4A5)),
-  ChartData('Mon', 35, Color(0xffFBB1C3)),
-  ChartData('Tues', 28, Color(0xffB6BBFE)),
-  ChartData('Wed', 34, Color(0xffC7F4A5)),
-  ChartData('Thurs', 32, Color(0xffFBB1C3)),
-  ChartData('Fri', 14, Color(0xffB6BBFE)),
-  ChartData('Sat', 50, Color(0xffC7F4A5)),
+  ChartData('Sun', 26, const Color(0xffC7F4A5)),
+  ChartData('Mon', 35, const Color(0xffFBB1C3)),
+  ChartData('Tues', 28, const Color(0xffB6BBFE)),
+  ChartData('Wed', 34, const Color(0xffC7F4A5)),
+  ChartData('Thurs', 32, const Color(0xffFBB1C3)),
+  ChartData('Fri', 14, const Color(0xffB6BBFE)),
+  ChartData('Sat', 50, const Color(0xffC7F4A5)),
 ];
 
 class ChartData {

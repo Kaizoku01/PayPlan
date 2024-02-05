@@ -41,7 +41,7 @@ abstract class PayPlanTextTheme {
       ),
 
       displayMedium: TextStyle(
-        fontSize: 28,
+        fontSize: 26,
         fontWeight: FontWeight.normal,
         color: textColor,
       ),
