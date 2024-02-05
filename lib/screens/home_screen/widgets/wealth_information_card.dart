@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:pay_plan/common/theme/app_color_scheme.dart';
 import 'package:pay_plan/common/theme/app_text_theme.dart';
-
+import 'amount_widget.dart';
 import 'guageClass.dart';
 
 class WealthInformationCard extends StatelessWidget {
@@ -35,73 +35,26 @@ class WealthInformationCard extends StatelessWidget {
               children: [
                 Text(
                   'Income',
-                  style: PayPlanTextTheme.appTextTheme(PayPlanColorScheme.font2Theme(context), context).labelLarge!.copyWith(fontWeight: FontWeight.w600),
+                  style: PayPlanTextTheme.appTextTheme(
+                          PayPlanColorScheme.font2Theme(context), context)
+                      .labelLarge!
+                      .copyWith(fontWeight: FontWeight.w600),
                 ),
-                Row(
-                  children: [
-                    Container(
-                      height: 22,
-                      width: 22,
-                      decoration: BoxDecoration(
-                        color: PayPlanColorScheme.chartBarsTheme1(context).withOpacity(0.5),
-                        borderRadius: BorderRadius.circular(8),
-                      ),
-                      child:  Icon(
-                        Icons.arrow_downward_rounded,
-                        color: PayPlanColorScheme.icon3Theme(context: context, isIncome: true),
-                        size: 18,
-                      ),
-                    ),
-                     Padding(
-                      padding: const EdgeInsets.symmetric(horizontal: 5.0),
-                      child: Text(
-                        '\u{20B9}',
-                        style: PayPlanTextTheme.appTextTheme(PayPlanColorScheme.font2Theme(context), context).bodyMedium!.copyWith(fontWeight: FontWeight.w600)
-                      ),
-                    ),
-                     Text(
-                      '1000',
-                      style: PayPlanTextTheme.appTextTheme(PayPlanColorScheme.font2Theme(context), context).labelLarge!.copyWith(fontWeight: FontWeight.w600)
-                    ),
-                  ],
+                const AmountWidget(
+                  amount: 1000,
+                  isIncome: true,
                 ),
-                 Padding(
+                Padding(
                   padding: const EdgeInsets.only(top: 15.0),
-                  child: Text(
-                    'Expense',
-                    style: PayPlanTextTheme.appTextTheme(PayPlanColorScheme.font2Theme(context), context).labelLarge!.copyWith(fontWeight: FontWeight.w600)
-                  ),
+                  child: Text('Expense',
+                      style: PayPlanTextTheme.appTextTheme(
+                              PayPlanColorScheme.font2Theme(context), context)
+                          .labelLarge!
+                          .copyWith(fontWeight: FontWeight.w600)),
                 ),
-                Row(
-                  children: [
-                    Container(
-                      height: 22,
-                      width: 22,
-                      decoration: BoxDecoration(
-                        color: PayPlanColorScheme.chartBarsTheme2(context).withOpacity(0.5),
-                        borderRadius: BorderRadius.circular(8),
-                      ),
-                      child: RotationTransition(
-                        turns: const AlwaysStoppedAnimation(30 / 360),
-                        child: Icon(
-                          Icons.arrow_upward_rounded,
-                          color: PayPlanColorScheme.icon3Theme(context: context, isIncome: false),
-                          size: 19,
-                        ),
-                      ),
-                    ),
-                     Padding(
-                      padding: const EdgeInsets.symmetric(horizontal: 5.0),
-                      child: Text(
-                        '\u{20B9}',
-                        style: PayPlanTextTheme.appTextTheme(PayPlanColorScheme.font2Theme(context), context).bodyMedium!.copyWith(fontWeight: FontWeight.w600),
-                      ),
-                    ),
-                     Text(
-                      '1200',
-                      style: PayPlanTextTheme.appTextTheme(PayPlanColorScheme.font2Theme(context), context).labelLarge!.copyWith(fontWeight: FontWeight.w600),
-                    ),
-                  ],
+                const AmountWidget(
+                  amount: 1200,
+                  isIncome: false,
                 ),
               ],
             ),
@@ -111,3 +64,5 @@ class WealthInformationCard extends StatelessWidget {
     );
   }
 }
+
+

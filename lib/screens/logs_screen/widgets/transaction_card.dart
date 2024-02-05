@@ -3,9 +3,20 @@ import 'package:flutter/material.dart';
 import '../../../common/theme/app_color_scheme.dart';
 import '../../../common/theme/app_text_theme.dart';
 class TransactionCard extends StatelessWidget {
+  ///[isIncome] is the card representing income or expense checking flag variable
   final bool isIncome;
+
+  ///[amount] is the amount of the particular transaction the card represents
+  final double amount;
+
+  ///[transactionSource] is the source of the particular transaction the card represents
+  final String transactionSource;
+
+  ///[timeStamp] is the formatted timeStamp of the particular transaction the card represents
+  final String timeStamp;
+
   const TransactionCard({
-    super.key, required this.isIncome,
+    super.key, required this.isIncome, required this.amount, required this.transactionSource, required this.timeStamp,
   });
 
   @override
@@ -23,14 +34,14 @@ class TransactionCard extends StatelessWidget {
             child: Column(
               children: [
                 Text(
-                  "\u{20B9} 2400",
+                  "\u{20B9} $amount",
                   style: PayPlanTextTheme.appTextTheme(
                       PayPlanColorScheme.lightFont1, context)
                       .bodyLarge!
                       .copyWith(fontWeight: FontWeight.bold),
                 ),
                 Text(
-                  "via Google Pay",
+                  transactionSource,
                   style: PayPlanTextTheme.appTextTheme(
                       PayPlanColorScheme.lightFont1, context)
                       .labelSmall!
@@ -50,7 +61,7 @@ class TransactionCard extends StatelessWidget {
                 ),
                 const Spacer(),
                 Text(
-                  "2nd Feb 2023 1:36 AM",
+                  timeStamp,
                   style: PayPlanTextTheme.appTextTheme(
                       PayPlanColorScheme.lightFont1, context)
                       .labelSmall!

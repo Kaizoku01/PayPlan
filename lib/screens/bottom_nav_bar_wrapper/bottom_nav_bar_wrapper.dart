@@ -4,11 +4,8 @@ import 'package:pay_plan/common/theme/app_color_scheme.dart';
 import 'package:pay_plan/screens/logs_screen/logs_screen.dart';
 import 'package:pay_plan/screens/profile_screen/profile_screen.dart';
 import 'package:sliding_clipped_nav_bar/sliding_clipped_nav_bar.dart';
-
 import '../../common/theme/app_text_theme.dart';
 import '../home_screen/home_screen.dart';
-
-///TODO: IMPLEMENT PROVIDER ON THE INDEX OF BOTTOM_NAV_BAR
 
 class BottomNavBarWrapper extends StatefulWidget {
   const BottomNavBarWrapper({super.key});
@@ -24,10 +21,10 @@ class _BottomNavBarWrapperState extends State<BottomNavBarWrapper> {
   int selectedIndex = 0;
 
   ///[_screenOptions] Contains all screens callouts for bottomNavBar
-  final List<Widget> _screenOptions =  [
-    const HomeScreen(),
-    LogScreen(),
-    const ProfileScreen(),
+  final List<Widget> _screenOptions = const [
+     HomeScreen(),
+     LogScreen(),
+     ProfileScreen(),
   ];
 
   @override
@@ -36,6 +33,7 @@ class _BottomNavBarWrapperState extends State<BottomNavBarWrapper> {
     _pageController = PageController(initialPage: selectedIndex);
   }
 
+  ///[_onButtonPressed] This method is used for changing screen through bottom nav bar
   void _onButtonPressed(int index) {
     setState(() {
       selectedIndex = index;

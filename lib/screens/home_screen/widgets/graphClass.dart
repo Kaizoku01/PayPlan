@@ -11,6 +11,7 @@ class GraphClass extends StatelessWidget {
     return SfCartesianChart(
       backgroundColor: PayPlanColorScheme.bg1Theme(context),
       plotAreaBorderWidth: 0,
+      //x-axis
       primaryXAxis: CategoryAxis(
         majorTickLines: const MajorTickLines(width: 0),
         axisLine: const AxisLine(color: Colors.black, width: 0),
@@ -19,6 +20,7 @@ class GraphClass extends StatelessWidget {
                 PayPlanColorScheme.font1Theme(context), context)
             .bodySmall,
       ),
+      //y-axis
       primaryYAxis: NumericAxis(
         isVisible: false,
         axisLine: const AxisLine(color: Colors.black, width: 0),
@@ -29,6 +31,7 @@ class GraphClass extends StatelessWidget {
                 PayPlanColorScheme.font1Theme(context), context)
             .bodySmall,
       ),
+      //data
       series: [
         ColumnSeries<ChartData, String>(
           dataSource: data,

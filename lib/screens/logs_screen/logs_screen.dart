@@ -5,10 +5,10 @@ import '../../common/theme/app_color_scheme.dart';
 import '../../common/theme/app_text_theme.dart';
 
 class LogScreen extends StatelessWidget {
-  LogScreen({super.key});
- final  List<bool> testStatusList = [false, true, true];
+  const LogScreen({super.key});
   @override
   Widget build(BuildContext context) {
+    final List<bool> testStatusList = [false, true, true];
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 5.0),
       child: Column(
@@ -28,7 +28,12 @@ class LogScreen extends StatelessWidget {
             child: ListView.separated(
               itemCount: 3,
               itemBuilder: (context, index) {
-                return TransactionCard(isIncome: testStatusList[index],);
+                return TransactionCard(
+                  isIncome: testStatusList[index],
+                  amount: 1200,
+                  transactionSource: 'via fannyPay',
+                  timeStamp: '2nd Feb 2023 1:36 AM',
+                );
               },
               separatorBuilder: (BuildContext context, int index) {
                 return const SizedBox(height: 10);
