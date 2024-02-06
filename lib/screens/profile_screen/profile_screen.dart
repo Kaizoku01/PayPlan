@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:pay_plan/screens/personalize_screen/personalize_screen.dart';
 import 'package:pay_plan/screens/profile_screen/widgets/profile_button.dart';
 import 'package:pay_plan/screens/profile_screen/widgets/use_service_card_button.dart';
 
@@ -13,7 +14,7 @@ class ProfileScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        const CircleAvatar(radius: 50),
+        const CircleAvatar(radius: 55),
         const SizedBox(height: 10),
         Text('Sarvagya',
             style: PayPlanTextTheme.appTextTheme(
@@ -45,7 +46,7 @@ class ProfileScreen extends StatelessWidget {
                 ),
               ),
               onTap: () {
-                //TODO: PERSONALIZE SCREEN ROUTE
+                Navigator.pushNamed(context, PersonalizeScreen.routeName);
               },
             ),
             ProfileButton(
