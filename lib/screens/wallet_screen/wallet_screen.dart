@@ -25,7 +25,7 @@ class WalletScreen extends StatelessWidget {
             const SizedBox(height: 25),
             Icon(
               FontAwesomeIcons.wallet,
-              color: PayPlanColorScheme.icon1Theme(context),
+              color: PayPlanColorScheme.wealthCardTheme(context),
               size: 60,
             ),
             const SizedBox(height: 10),
@@ -42,11 +42,11 @@ class WalletScreen extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.start,
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  const Padding(
-                    padding: EdgeInsets.only(top: 2.0),
+                   Padding(
+                    padding: const EdgeInsets.only(top: 2.0,right: 5),
                     child: Icon(
                       Icons.info_rounded,
-                      color: Colors.black45,
+                      color: PayPlanColorScheme.font1Theme(context).withOpacity(0.7),
                     ),
                   ),
                   Flexible(

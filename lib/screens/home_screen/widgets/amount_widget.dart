@@ -23,32 +23,34 @@ class AmountWidget extends StatelessWidget {
           height: 22,
           width: 22,
           decoration: BoxDecoration(
-            color: PayPlanColorScheme.chartBarsTheme1(context).withOpacity(0.5),
+            color: isIncome
+                ? PayPlanColorScheme.chartBarsTheme1(context).withOpacity(0.5)
+                : PayPlanColorScheme.chartBarsTheme2(context).withOpacity(0.5),
             borderRadius: BorderRadius.circular(8),
           ),
           child: isIncome
               ? Icon(
-            Icons.arrow_upward_rounded,
-            color: PayPlanColorScheme.icon3Theme(
-                context: context, isIncome: isIncome),
-            size: 18,
-          )
+                  Icons.arrow_upward_rounded,
+                  color: PayPlanColorScheme.icon3Theme(
+                      context: context, isIncome: isIncome),
+                  size: 18,
+                )
               : RotationTransition(
-            turns: const AlwaysStoppedAnimation(30 / 360),
-            child: Icon(
-              Icons.arrow_upward_rounded,
-              color: PayPlanColorScheme.icon3Theme(
-                  context: context, isIncome: isIncome),
-              size: 19,
-            ),
-          ),
+                  turns: const AlwaysStoppedAnimation(30 / 360),
+                  child: Icon(
+                    Icons.arrow_upward_rounded,
+                    color: PayPlanColorScheme.icon3Theme(
+                        context: context, isIncome: isIncome),
+                    size: 19,
+                  ),
+                ),
         ),
         Padding(
           padding: const EdgeInsets.symmetric(horizontal: 5.0),
           child: Text(
             '\u{20B9}',
             style: PayPlanTextTheme.appTextTheme(
-                PayPlanColorScheme.font2Theme(context), context)
+                    PayPlanColorScheme.font2Theme(context), context)
                 .bodyMedium!
                 .copyWith(fontWeight: FontWeight.w600),
           ),
@@ -56,7 +58,7 @@ class AmountWidget extends StatelessWidget {
         Text(
           amount.toString(),
           style: PayPlanTextTheme.appTextTheme(
-              PayPlanColorScheme.font2Theme(context), context)
+                  PayPlanColorScheme.font2Theme(context), context)
               .labelLarge!
               .copyWith(fontWeight: FontWeight.w600),
         ),

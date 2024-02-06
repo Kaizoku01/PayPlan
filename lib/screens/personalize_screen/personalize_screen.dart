@@ -22,84 +22,85 @@ class PersonalizeScreen extends StatelessWidget {
         ),
         iconTheme: const IconThemeData(size: 30.0),
       ),
-      body: Center(
-        child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 15.0),
-          child: Column(
-            children: [
-              Padding(
-                padding: const EdgeInsets.only(top: 15.0),
-                child: Stack(
-                  alignment: Alignment.bottomRight,
-                  children: [
-                    const CircleAvatar(radius: 60),
-                    Positioned(
-                      bottom: 8,
-                      right: 10,
-                      child: Icon(
-                        FontAwesomeIcons.squarePen,
-                        color: PayPlanColorScheme.lightPrimaryColor1,
+      body: SingleChildScrollView(
+        child: Center(
+          child: Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 15.0),
+            child: Column(
+              children: [
+                Padding(
+                  padding: const EdgeInsets.only(top: 15.0),
+                  child: Stack(
+                    alignment: Alignment.bottomRight,
+                    children: [
+                      const CircleAvatar(radius: 60),
+                      Positioned(
+                        bottom: 8,
+                        right: 10,
+                        child: Icon(
+                          FontAwesomeIcons.squarePen,
+                          color: PayPlanColorScheme.wealthCardTheme(context),
+                        ),
+                      )
+                    ],
+                  ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.only(top: 75.0),
+                  child: InputFormFields(
+                    labelText: 'Full Name',
+                  ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.only(top: 30.0),
+                  child: InputFormFields(
+                    // labelText: 'Email',
+                    readOnly: true,
+                  ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.symmetric(vertical: 20.0),
+                  child: Row(
+                    children: [
+                      Text(
+                        "Dark Mode",
+                        style: PayPlanTextTheme.appTextTheme(
+                                PayPlanColorScheme.font1Theme(context),
+                                context)
+                            .headlineMedium!
+                            .copyWith(fontWeight: FontWeight.bold),
                       ),
-                    )
-                  ],
-                ),
-              ),
-              Padding(
-                padding: const EdgeInsets.only(top: 75.0),
-                child: InputFormFields(
-                  labelText: 'Full Name',
-                ),
-              ),
-              Padding(
-                padding: const EdgeInsets.only(top: 30.0),
-                child: InputFormFields(
-                  // labelText: 'Email',
-                  readOnly: true,
-                ),
-              ),
-              Padding(
-                padding: const EdgeInsets.symmetric(vertical: 20.0),
-                child: Row(
-                  children: [
-                    Text(
-                      "Dark Mode",
-                      style: PayPlanTextTheme.appTextTheme(
-                              PayPlanColorScheme.font1Theme(context)
-                                  .withOpacity(0.6),
-                              context)
-                          .headlineMedium!
-                          .copyWith(fontWeight: FontWeight.bold),
-                    ),
-                    const SizedBox(width: 10),
-                    Transform.scale(
-                      scale: 0.9,
-                      child: Switch(
-                        value: false,
-                        onChanged: (val) {},
+                      const SizedBox(width: 10),
+                      Transform.scale(
+                        scale: 0.9,
+                        child: Switch(
+                          value: false,
+                          onChanged: (val) {},
+                        ),
                       ),
-                    ),
-                  ],
+                    ],
+                  ),
                 ),
-              ),
-              const SizedBox(height: 30),
-              ElevatedButton(
-                style: ElevatedButton.styleFrom(
-                    backgroundColor:
-                        PayPlanColorScheme.wealthCardTheme(context),
-                    elevation: 0,
-                    shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(12))),
-                onPressed: () {
-                  //todo: update personal details
-                },
-                child: Text(
-                  "Submit",
-                  style: PayPlanTextTheme.appTextTheme(
-                          PayPlanColorScheme.font2Theme(context), context)
-                      .bodyMedium,
-                ),
-              )
-            ],
+                const SizedBox(height: 30),
+                ElevatedButton(
+                  style: ElevatedButton.styleFrom(
+                      backgroundColor:
+                          PayPlanColorScheme.wealthCardTheme(context),
+                      elevation: 0,
+                      shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(12))),
+                  onPressed: () {
+                    //todo: update personal details
+                  },
+                  child: Text(
+                    "Submit",
+                    style: PayPlanTextTheme.appTextTheme(
+                            PayPlanColorScheme.font2Theme(context), context)
+                        .bodyMedium,
+                  ),
+                )
+              ],
+            ),
           ),
         ),
       ),

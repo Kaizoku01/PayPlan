@@ -38,6 +38,16 @@ class PayPlanColorScheme {
     }
   }
 
+  static Color bg2Theme(BuildContext context) {
+    final isDarkModeEnabled = context.watch<ThemeProvider>().isDarkModeEnabled;
+
+    if (isDarkModeEnabled) {
+      return lightBackground1;
+    } else {
+      return darkBackground1;
+    }
+  }
+
   static Color font1Theme(BuildContext context) {
     final isDarkModeEnabled = context.watch<ThemeProvider>().isDarkModeEnabled;
 
@@ -52,7 +62,7 @@ class PayPlanColorScheme {
     final isDarkModeEnabled = context.watch<ThemeProvider>().isDarkModeEnabled;
 
     if (isDarkModeEnabled) {
-      return lightFont1 ;
+      return lightFont1;
     } else {
       return darkFont1;
     }
@@ -78,11 +88,12 @@ class PayPlanColorScheme {
     }
   }
 
-  static Color icon3Theme({required BuildContext context, required bool isIncome}) {
+  static Color icon3Theme(
+      {required BuildContext context, required bool isIncome}) {
     final isDarkModeEnabled = context.watch<ThemeProvider>().isDarkModeEnabled;
 
     if (isDarkModeEnabled) {
-      return darkBackground1;
+      return isIncome ? darkIncomeColor : darkExpenseColor;
     } else {
       return isIncome ? lightIncomeColor : lightExpenseColor;
     }

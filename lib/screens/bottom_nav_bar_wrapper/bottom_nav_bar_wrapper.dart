@@ -76,7 +76,7 @@ class _BottomNavBarWrapperState extends State<BottomNavBarWrapper> {
           backgroundColor: PayPlanColorScheme.bg1Theme(context),
           onButtonPressed: _onButtonPressed,
           iconSize: 30,
-          activeColor: PayPlanColorScheme.font1Theme(context),
+          activeColor: PayPlanColorScheme.icon1Theme(context),
           selectedIndex: selectedIndex,
           barItems: <BarItem>[
             BarItem(

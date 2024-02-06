@@ -15,9 +15,9 @@ class GoogleSignUpButton extends StatelessWidget {
         style: ElevatedButton.styleFrom(
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(12),
-            side: const BorderSide(color: Colors.black, width: 1.5),
+            side: BorderSide(color: PayPlanColorScheme.bg2Theme(context), width: 1.2),
           ),
-          backgroundColor: Colors.white,
+          backgroundColor: PayPlanColorScheme.bg1Theme(context),
           elevation: 0,
         ),
         onPressed: () {
