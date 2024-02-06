@@ -1,10 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:pay_plan/screens/about_us_screen/about_us_screen.dart';
+import 'package:pay_plan/screens/personalize_screen/personalize_screen.dart';
 import 'package:pay_plan/screens/profile_screen/widgets/profile_button.dart';
 import 'package:pay_plan/screens/profile_screen/widgets/use_service_card_button.dart';
 
 import '../../common/theme/app_color_scheme.dart';
 import '../../common/theme/app_text_theme.dart';
+import '../wallet_screen/wallet_screen.dart';
 
 class ProfileScreen extends StatelessWidget {
   const ProfileScreen({super.key});
@@ -13,7 +16,7 @@ class ProfileScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        const CircleAvatar(radius: 50),
+        const CircleAvatar(radius: 55),
         const SizedBox(height: 10),
         Text('Sarvagya',
             style: PayPlanTextTheme.appTextTheme(
@@ -45,7 +48,7 @@ class ProfileScreen extends StatelessWidget {
                 ),
               ),
               onTap: () {
-                //TODO: PERSONALIZE SCREEN ROUTE
+                Navigator.pushNamed(context, PersonalizeScreen.routeName);
               },
             ),
             ProfileButton(
@@ -56,7 +59,7 @@ class ProfileScreen extends StatelessWidget {
                 size: 20,
               ),
               onTap: () {
-                //TODO: WALLET SCREEN ROUTE
+                Navigator.pushNamed(context, WalletScreen.routeName);
               },
             ),
           ],
@@ -100,7 +103,7 @@ class ProfileScreen extends StatelessWidget {
                 ),
               ),
               onTap: () {
-                //TODO: ABOUT US SCREEN ROUTE
+                Navigator.pushNamed(context, AboutUsScreen.routeName);
               },
             ),
           ],
@@ -111,7 +114,3 @@ class ProfileScreen extends StatelessWidget {
     );
   }
 }
-
-
-
-

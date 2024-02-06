@@ -9,6 +9,7 @@ import '../home_screen/home_screen.dart';
 
 class BottomNavBarWrapper extends StatefulWidget {
   const BottomNavBarWrapper({super.key});
+  static const String routeName = "bottom_nav_bar_wrapper";
   @override
   State<BottomNavBarWrapper> createState() => _BottomNavBarWrapperState();
 }
@@ -75,7 +76,7 @@ class _BottomNavBarWrapperState extends State<BottomNavBarWrapper> {
           backgroundColor: PayPlanColorScheme.bg1Theme(context),
           onButtonPressed: _onButtonPressed,
           iconSize: 30,
-          activeColor: PayPlanColorScheme.font1Theme(context),
+          activeColor: PayPlanColorScheme.icon1Theme(context),
           selectedIndex: selectedIndex,
           barItems: <BarItem>[
             BarItem(

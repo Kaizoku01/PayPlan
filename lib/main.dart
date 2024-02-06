@@ -3,7 +3,10 @@ import 'package:pay_plan/common/provider/theme_provider.dart';
 import 'package:pay_plan/common/theme/dark_theme/dark_theme.dart';
 import 'package:pay_plan/common/theme/light_theme/light_theme.dart';
 import 'package:pay_plan/screens/bottom_nav_bar_wrapper/bottom_nav_bar_wrapper.dart';
+import 'package:pay_plan/screens/signup_screen/signup_screen.dart';
 import 'package:provider/provider.dart';
+
+import 'common/routes.dart';
 
 void main() {
   runApp(
@@ -29,7 +32,8 @@ class MyApp extends StatelessWidget {
       themeMode: context.watch<ThemeProvider>().isDarkModeEnabled
           ? ThemeMode.dark
           : ThemeMode.light,
-      home: const BottomNavBarWrapper(),
+      onGenerateRoute: Routes.onGenerateRoute,
+      initialRoute: SignUpScreen.routeName,
     );
   }
 }
