@@ -9,6 +9,7 @@ import '../home_screen/home_screen.dart';
 
 class BottomNavBarWrapper extends StatefulWidget {
   const BottomNavBarWrapper({super.key});
+  static const String routeName = "bottom_nav_bar_wrapper";
   @override
   State<BottomNavBarWrapper> createState() => _BottomNavBarWrapperState();
 }

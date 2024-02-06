@@ -40,6 +40,12 @@ abstract class PayPlanTextTheme {
         color: textColor,
       ),
 
+      headlineMedium: TextStyle(
+        fontSize: 20,
+        fontWeight: FontWeight.normal,
+        color: textColor,
+      ),
+
       displayMedium: TextStyle(
         fontSize: 26,
         fontWeight: FontWeight.normal,
